@@ -1,18 +1,30 @@
 <?php
 
-for($i=0; $i<10; $i++){
-    if($i==3){
-        continue;
+class Box{
+    public $width;
+    public $height;
+    public $length;
+
+    public function __contruct($w = 0, $h = 0, $l = 0){
+        $this->width = $w;
+        $this->height = $h;
+        $this->length = $l;
     }
-    if($i == 5){
-        break;
+
+    public function volume(){
+        return $this->width * $this->height * $this->length;
     }
-    var_dump($i);
 }
 
-for($i=0;$i<10;$i++){
-    for($j=0;$j<10;$j++){
-        break 2;
-    }
-    var_dump($i);
-}
+$box1 = new Box();
+$box1->width = 10;
+$box1->height = 10;
+$box1->length = 10;
+
+var_dump($box1->volume());
+
+$box3 = new Box();
+$box->width = 10;
+// Kui lihtsalt võrduma panna, siis on by-reference, aga nii on täiesti oma objekt.
+$box2 = clone $box1;
+$box2->width = 20;
