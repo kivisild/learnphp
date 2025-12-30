@@ -1,27 +1,37 @@
 <?php
 
-// library
-class Job{
-    public function task(Logger $logger){
-        for($i=0; $i<10; $i++){
-            $logger->log("Task $i completed!");
+class Cat {
+    public function __construct(){
+        var_dump('Class was created');
+    }
 
-            
-        }
+    public function __toString(){
+        return 'Mjäu';
+    }
+
+    public function __destruct(){
+        var_dump('Class was destoryed');
+    }
+
+    public function __get($name){
+        var_dump($name);
+        return "something to return when something is used that is not a property";
+
+    }
+
+    public function __call($name, $args){
+        var_dump($name, $args);
+        return "this function does not exist";
+    }
+
+    public function __invoke($value){
+        var_dump($value);
+        return 'Tried to use class as a function';
     }
 }
 
-class ConsoleLogger implements Logger{
-    public function log($message){
-        echo $message . "\n";
-    }
-}
+$kitty = new Cat();
+var_dump($kitty);
+echo $kitty;
 
-interface Logger {
-    public function log($message);
-}
-
-// user
-$job = new Job();
-$logger = new ConsoleLogger();
-$job->task($logger);
+$kitty = 1;
