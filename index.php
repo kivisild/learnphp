@@ -1,23 +1,18 @@
 <?php
 
-function hello(){
-    var_dump('Hello');
-}
-
-function functionWidthArguments($argument){
-    var_dump('Function with arguments' . $argument);
-}
-
-// Võtab lõputult argumente
-function stuff(...$args){
-    var_dump(...$args);
-}
-
-function recursive($i){
-    if ($i < 10){
-        var_dump($i);
-        recursive($i+1);
+for($i=0; $i<10; $i++){
+    if($i==3){
+        continue;
     }
+    if($i == 5){
+        break;
+    }
+    var_dump($i);
 }
-hello();
-functionWidthArguments('hello world!');
+
+for($i=0;$i<10;$i++){
+    for($j=0;$j<10;$j++){
+        break 2;
+    }
+    var_dump($i);
+}
