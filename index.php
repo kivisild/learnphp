@@ -1,34 +1,23 @@
 <?php
 
-$bool = true && false;
-$bool = true || false;
-$num = 15;
-if ($num > 10){
-    var_dump('Suurem');
-}
-var_dump($bool);
-
-$array = [1,2,3];
-
-foreach($array as $key=>$value){
-    var_dump($key, $value);
+function hello(){
+    var_dump('Hello');
 }
 
-foreach($array as $value){
-    var_dump($value);
+function functionWidthArguments($argument){
+    var_dump('Function with arguments' . $argument);
 }
 
-
-$a = 1;
-$b = &$a;
-$b = 2;
-
-foreach($array as $value){
-    $value *= 2;
+// Võtab lõputult argumente
+function stuff(...$args){
+    var_dump(...$args);
 }
 
-// Pointeriga saab muuta
-foreach($array as &$value){
-    $value *= 2;
+function recursive($i){
+    if ($i < 10){
+        var_dump($i);
+        recursive($i+1);
+    }
 }
-var_dump($array);
+hello();
+functionWidthArguments('hello world!');
