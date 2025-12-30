@@ -1,23 +1,26 @@
 <?php
 
+class Cat {
+    use Colorful;
+}
 class Box{
+    use Colorful;
     private $width;
     public $height;
     public $length;
 
     public static $count = 0;
 
-    public static function staticFunction(){
-        //var_dump($this->width);
-        var_dump(static::class);
-        var_dump(self::class);
-    }
-
     public function __construct($w = 0, $h = 0, $l = 0){
         $this->width = $w;
         $this->height = $h;
         $this->length = $l;
         self::$count++;
+    }
+    public static function staticFunction(){
+        //var_dump($this->width);
+        var_dump(static::class);
+        var_dump(self::class);
     }
 
     public function volume(){
@@ -50,6 +53,17 @@ class MetalBox extends Box{
 
     public function mass(){
         return $this->volume() * $this->massPerUnit;
+    }
+}
+
+trait Colorful {
+    private $color;
+
+    public function setColor($color){
+        $this->color = $color;
+    }
+    public function getColor(){
+        return $this->color;
     }
 }
 
