@@ -1,31 +1,34 @@
 <?php
 
-echo "Hello world!\n";
-echo 'Kasuta ühekordesid sulgusid';
-$var = 1;
-echo $var;
+$bool = true && false;
+$bool = true || false;
+$num = 15;
+if ($num > 10){
+    var_dump('Suurem');
+}
+var_dump($bool);
 
-// Tekstide liitmine punktiga
-echo $var . "\n";
+$array = [1,2,3];
 
-$array1 = array(1, 2, 3, 4);
-$array2 = [true, NULL, 'hello', 1, [1,2,3]];
+foreach($array as $key=>$value){
+    var_dump($key, $value);
+}
 
-$array3 = [
-    1,
-    2,
-    3,
-    'name' => 'fkdjdf'
-    'age' => 99
-    'boolean' => true
-]
+foreach($array as $value){
+    var_dump($value);
+}
 
-$array4 = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-]
 
-array_push($array, 5,6,7);
-$array[] = 8;
-var_dump($array2);
+$a = 1;
+$b = &$a;
+$b = 2;
+
+foreach($array as $value){
+    $value *= 2;
+}
+
+// Pointeriga saab muuta
+foreach($array as &$value){
+    $value *= 2;
+}
+var_dump($array);
