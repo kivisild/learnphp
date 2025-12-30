@@ -5,10 +5,19 @@ class Box{
     public $height;
     public $length;
 
+    public static $count = 0;
+
+    public static function staticFunction(){
+        //var_dump($this->width);
+        var_dump(static::class);
+        var_dump(self::class);
+    }
+
     public function __construct($w = 0, $h = 0, $l = 0){
         $this->width = $w;
         $this->height = $h;
         $this->length = $l;
+        self::$count++;
     }
 
     public function volume(){
