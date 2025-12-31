@@ -1,0 +1,1 @@
+php -S localhost:1337 public/index.php
