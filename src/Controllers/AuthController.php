@@ -17,7 +17,7 @@ class AuthController{
         }
 
         $user = new User();
-        $user->password = password_hash($_POST['password'], PASSWORD_BCRYPT_DEFAULT_COST);
+        $user->password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $user->email = $_POST['email'];
         $user->save();
         redirect('/login');
