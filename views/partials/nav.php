@@ -41,6 +41,7 @@
                             <?=auth()->email?>
                         </button>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/users">Users</a></li>
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         </ul>
                     </div>

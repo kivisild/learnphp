@@ -42,4 +42,6 @@ class AuthController{
         unset($_SESSION['userID']);
         redirect('/');
     }
+
+    
 }
